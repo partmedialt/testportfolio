@@ -30,6 +30,10 @@ html {
    grid-template: 100px 1fr 230px / 1fr;
 }
 
+.hide {
+   display: none;
+}
+
 .header {
    padding: 0 36px;
    background: $primarypink;
@@ -70,12 +74,6 @@ html {
          top:32px;
          left:0px;
       } 
-   }
-}
-
-@media (min-width: $tablet) {
-   .burger {
-      display: none;
    }
 }
 
