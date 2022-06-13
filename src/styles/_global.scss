@@ -30,10 +30,9 @@ html {
 
 .header {
    background: $primarypink;
-   padding: 0 32px;
    grid-row: 1;
    display: grid;
-   grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
+   grid-template: 1fr / 1fr minmax(auto, 289px) minmax(auto, 900px) 1fr;
    align-items: center;
 
    &__logo {
@@ -80,17 +79,22 @@ html {
 main {
    grid-row: 2;
    display: grid;
-   grid-template: 1fr / 1fr minmax(auto, 1400px) 1fr;
+   grid-template: 1fr / 1fr minmax(auto, 1300px) 1fr;
+   background: #CCC;
 }
 
-
+.maincontainer {
+   grid-column: 2;
+   background: #fff;
+}
 
 .about2 {
+   margin: 0 auto;
    padding: 90px 32px 90px 32px;
    grid-column: 2;
    display: grid;
-   grid-template: 1fr / minmax(280px, 480px) minmax(385px, auto);
-   gap:24px;
+   grid-template: 1fr / minmax(280px, 584px) minmax(385px, 605px);
+   justify-content: center;
 
    &__picture {
       grid-column: 1;
@@ -101,6 +105,7 @@ main {
    }
 
    &__text {
+      padding-left: 24px;
       grid-column: 2;
       justify-content: right;
    }
@@ -329,6 +334,7 @@ main {
       display: grid;
       grid-template: auto / minmax(auto, 330px) minmax(auto, 330px) minmax(auto, 330px);
       column-gap: 45px;
+      justify-content: center;
       row-gap: 60px;
    }
 
