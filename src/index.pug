@@ -2,12 +2,76 @@ include pug/libs/_libs
 
 doctype html
 html(lang='en')
-    include pug/_head
-    body
-        .container
-            h1 Hello from Webpack
-            h2.container__subtitle Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ipsam!
-            +image('angular')
-            +image('webpack')
-            .block
-            .user
+   include pug/_head
+   body
+      .wrapper
+         header.header
+            a(href="#").header__logo Damadams
+            nav.header__menu
+               a.header__menu_active(href="#") Home 
+               a(href="#") About
+               a(href="#") Latest Works
+               a(href="#") Testimonials
+               a(href="#") Contacts
+         main.main
+            section.about1
+
+            section.about2
+               .about2__picture 
+                  img.about2__img(src="./images/about2-pic.jpg", alt="About Me")
+               .about2__text
+                  .about2__title I am a creative Graphic & UI Designer
+                  .about2__description I’m a Graphics Designer,Designng has become my everyday affair. masting styles,grids cant be less interesting,Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  .about2__buttons
+                     a.about2__button.button(href="") Download CV
+                     a.about2__button.button(href="") View Portfolio
+                  .about2__tools
+                     .about2__tool.tool
+                        .tool__icon
+                        .tool__line 
+                        span 
+            section.numbers
+               .numbers__items
+                  .numbers__item <span>81</span> happy customers
+                  .numbers__item <span>97+</span> completed projects
+                  .numbers__item <span>50</span> awards won
+            section.projects 
+               .projects__title.title Latest work
+               .projects__items 
+                  .projects__item.project 
+                     a(href="#")
+                        img.project__img(src="./images/work-1.jpg", alt="Work 1")
+                     p.project__title Project title
+                     p.project__desc UI, Art drection
+                  .projects__item.project 
+                     a(href="#")
+                        img.project__img(src="./images/work-2.jpg", alt="Work 2")
+                     p.project__title Project title
+                     p.project__desc UI, Art drection
+                  .projects__item.project 
+                     a(href="#")
+                        img.project__img(src="./images/work-3.jpg", alt="Work 3")
+                     p.project__title Project title
+                     p.project__desc UI, Art drection
+                  .projects__item.project 
+                     a(href="#")
+                        img.project__img(src="./images/work-4.jpg", alt="Work 4")
+                     p.project__title Project title
+                     p.project__desc UI, Art drection
+                  .projects__item.project 
+                     a(href="#")
+                        img.project__img(src="./images/work-5.jpg", alt="Work 5")
+                     p.project__title Project title
+                     p.project__desc UI, Art drection
+                  .projects__item.project 
+                     a(href="#")
+                        img.project__img(src="./images/work-6.jpg", alt="Work 6")
+                     p.project__title Project title
+                     p.project__desc UI, Art drection
+            section.testimonials 
+            section.contacts
+
+
+         footer.footer
+
+
