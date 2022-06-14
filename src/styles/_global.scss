@@ -181,7 +181,6 @@ main {
 
    &__line {
       grid-column: 2;
-      position: relative;
       bottom: 4px;
       height: 8px;
       background: #C4C4C4;
@@ -192,12 +191,11 @@ main {
          position: relative;
          background: #FB3F5C;
          height: 100%;
-         text-align: right;
 
          span {
             position: absolute;
             bottom: 14px;
-            right: 4px;
+            right: 0;
             
          }
    }
