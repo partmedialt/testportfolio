@@ -27,7 +27,7 @@ html {
 .wrapper {
    min-height: 100%;
    display: grid;
-   grid-template: 100px 1fr 230px / 1fr;
+   grid-template: 100px 1fr minmax(230px, auto) / 1fr;
 }
 
 .hide {
@@ -64,6 +64,10 @@ html {
          position: relative;
       }
 
+      a:hover {
+         color: $pinkish;
+      }
+
       &_active::after, a:hover::after {
          content: '';
          width: 24px;
@@ -74,26 +78,6 @@ html {
          top:32px;
          left:0px;
       } 
-   }
-}
-
-@media (max-width: $tablet) {
-   .burger {
-      grid-column: 3 / 4;
-      display: grid;
-      justify-content: end;
-   
-      &__icon::before {
-         font-size: 32px;
-         color: $logomenutext;
-      }
-
-      &__icon:hover::before {
-         color: #F4B600;
-      }
-   }
-   .header__menu {
-      display: none;
    }
 }
 
@@ -108,10 +92,13 @@ main {
    padding: 90px 32px 90px 32px;
    grid-column: 2;
    display: grid;
-   grid-template: 1fr / minmax(280px, 584px) minmax(385px, 605px);
+   grid-template: 1fr auto / minmax(280px, 584px) minmax(385px, 605px);
    justify-content: center;
+   align-items: center;
+   gap: 48px 24px;
 
    &__picture {
+      grid-row: 1/3;
       grid-column: 1;
    }
 
@@ -120,7 +107,7 @@ main {
    }
 
    &__text {
-      padding-left: 24px;
+      grid-row: 1;
       grid-column: 2;
       justify-content: right;
    }
@@ -154,105 +141,15 @@ main {
    }
 
    &__tools {
+      grid-column: 2;
+      grid-row: 2;
+      display: grid;
+      grid-template: 1fr 1fr / 1fr 1fr;
+      gap: 21px 70px;
    }
 
    &__tool {
-   }
-}
 
-@media (max-width: $tablet) {
-
-   .about2 {
-      padding: 32px 24px 32px 24px;
-
-      &__picture {
-         grid-column: 1;
-      }
-
-      &__img {
-         max-width: 100%;
-      }
-   
-      &__text {
-         grid-row: 1;
-         grid-column: 2;
-      }
-
-      &__title {
-         font-family: $fontNunito;
-         font-weight: 700;
-         font-size: $font24;
-         line-height: 38px;
-         margin-bottom: 16px;
-      }
-   
-      &__description {
-         font-family: $fontNunitosans;
-         font-size: $font18;
-         line-height: 33px;
-         letter-spacing: 0.06em;
-         margin-bottom: 48px;
-      }
-   
-      &__buttons {
-         display: grid;
-         grid-auto-flow: column;
-         justify-content: left;
-         gap: 18px;
-      }
-
-      &__button {
-         font-size: $font18;
-         padding: 12px 32px;
-      }
-   }
-}
-
-@media (max-width: $mobile) {
-
-   .about2 {
-      padding: 24px 28px 62px 28px;
-      grid-template: auto / 1fr;
-
-      &__picture {
-         text-align: center;
-         grid-row: 1;
-         margin: 0;
-      }
-   
-      &__text {
-         padding: 70px 0 0 0;
-         grid-row: 2;
-         grid-column: 1;
-      }
-
-      &__title {
-         font-family: $fontNunito;
-         font-weight: 700;
-         font-size: $font24;
-         line-height: 38px;
-         margin-bottom: 16px;
-      }
-   
-      &__description {
-         font-family: $fontNunitosans;
-         font-size: $font18;
-         line-height: 33px;
-         letter-spacing: 0.06em;
-         margin-bottom: 48px;
-      }
-   
-      &__buttons {
-         display: grid;
-         grid-auto-flow: row;
-         justify-content: center;
-         gap: 24px;
-      }
-
-      &__button {
-         font-size: $font21;
-         padding: 19px 36px;
-      }
    }
 }
 
@@ -270,15 +167,42 @@ main {
 }
 
 .tool {
+   display: grid;
+   grid-template: 45px / 45px 1fr;
+   gap: 0 16px;
 
    &__icon {
+      grid-column: 1;
 
+      img {
+         width: 100%;
+      }
    }
 
    &__line {
+      grid-column: 2;
+      position: relative;
+      bottom: 4px;
+      height: 8px;
+      background: #C4C4C4;
+      justify-content: end;
+      align-self: flex-end;
+
+      &_active {
+         position: relative;
+         background: #FB3F5C;
+         height: 100%;
+         text-align: right;
+
+         span {
+            position: absolute;
+            bottom: 14px;
+            right: 4px;
+            
+         }
    }
 }
-
+}
 
 /* SECTION NUMBERS*/
 
@@ -295,13 +219,14 @@ main {
       justify-content: space-between;
 
       span {
+         font-size: $font40;
          display: block;
          }
    }
 
    &__item {
       text-align: center;
-      padding: 52px;
+      padding: 32px 24px;
       font-weight: 700;
       font-size: 32px;
       line-height: 48px;
@@ -309,29 +234,7 @@ main {
    }
 }
 
-@media (max-width: $mobile) {
-   .numbers {
-      grid-template: 1fr / 1fr minmax(auto, 1300px) 1fr;
-      
-      &__items {
-         grid-auto-flow: row;
-         justify-content: center;
-         padding: 18px;
-         gap: 18px;
 
-            span {
-            display: inline;
-            }
-      }
-
-      &__item {
-         font-weight: 700;
-         padding: 0;
-         font-size: $font24;
-         text-transform: uppercase;
-      }
-   }
-}
 
 /* SECTION PROJECTS*/
 
@@ -386,30 +289,6 @@ main {
 }
 
 
-@media (max-width: $tablet) {
-   .projects {
-      padding: 48px 24px 48px 24px;
-      
-   
-      &__title {
-         margin-bottom: 54px;
-      }
-   
-      &__items {
-         grid-template: auto / minmax(auto, 330px) minmax(auto, 330px);
-      }
-   }
-}
-
-@media (max-width: $mobile) {
-   .projects {
-      padding: 48px 16px 48px 16px;
-   
-      &__items {
-         grid-template: auto / minmax(330px, 330px);
-      }
-   }
-}
 
 /* SECTION TESTIMONIALS*/
 
@@ -486,39 +365,76 @@ main {
    }
 }
 
-@media (max-width: $mobile) {
-   .testimonial {
-      padding: 28px 0;
-   
-      &__name {
-         font-weight: 600;
-         font-size: $font18;
-         margin-top: 8px;
+
+
+
+
+
+.footer {
+
+   background: $primarypink;
+   grid-row: 3;
+   display: grid;
+   grid-template: 1fr / 1fr minmax(auto, 1300px) 1fr;
+   font-family: $fontNunito;
+   font-weight: 500;
+   font-size: $font24;
+   padding: 68px 32px;
+   color: $logomenutext;
+
+   &__body {
+      grid-column: 2;
+      display: grid;
+      grid-template: 1fr 1fr / 1fr;
+      align-items: center;
+      text-align: center;
+      gap: 38px 0;
+   }
+
+   &__contacts {
+      grid-row: 1;
+      display: grid;
+      grid-auto-flow: column;
+   }
+
+   &__phone,&__email {
+      position: relative;
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: center;
+      gap: 0 16px;
+
+      &::after {
+         content:'';
+         width: 3px;
+         height: 100%;
+         background: $logomenutext;
+         position: absolute;
+         left:100%;
       }
-   
-      &__status {
-         font-size: $font14;
+   }
+
+   &__address {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: center;
+      gap: 0 16px;
+   }
+
+   &__icons {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: center;
+      gap: 30px;
+
+      a {
+         color: $logomenutext;
       }
-   
-      &__text {
-         font-size: $font12;
-         margin-top: 8px;
-      }
-   
-      &__rating {
-         grid-column: 2;
+
+      a:hover {
+         color: #F4B600;
       }
    }
 }
 
-
-
-
-
-
-
-
-footer {
-   background: $primarypink;
-   grid-row: 3;
-}
+@import 'media';

@@ -28,11 +28,25 @@ html(lang='en')
                   .about2__buttons
                      a.about2__button.button(href="") Download CV
                      a.about2__button.button(href="") View Portfolio
-                  .about2__tools
-                     .about2__tool.tool
-                        .tool__icon
-                        .tool__line 
-                        span 
+               .about2__tools
+                  .about2__tool.tool
+                     .tool__icon
+                        img(src="./images/ps-icon.png", alt="ps")
+                     .tool__line 
+                        .tool__line_active(style="width:70%;")
+                           span 70%
+                  .about2__tool.tool
+                     .tool__icon
+                        img(src="./images/figma-icon.png", alt="Figma")
+                     .tool__line 
+                        .tool__line_active(style="width:50%;")
+                           span 50%
+                  .about2__tool.tool
+                     .tool__icon
+                        img(src="./images/ai-icon.png", alt="AI")
+                     .tool__line 
+                        .tool__line_active(style="width:80%;")
+                           span 80%
             section.numbers
                .numbers__items
                   .numbers__item <span>81</span> happy customers
@@ -94,5 +108,28 @@ html(lang='en')
 
 
          footer.footer
+            .footer__body
+               .footer__contacts 
+                  .footer__phone 
+                     i.fa.fa-phone 
+                     span 09028793244
+                  .footer__email 
+                     i.fa.fa-envelope
+                     span shalewa64@gmail.com
+                  .footer__address 
+                     i.fa.fa-map
+                     span 497 Evergreen Rd. Roseville, CA 95673
+               .footer__icons
+                  a(href="#") 
+                     i.fa.fa-twitter
+                  a(href="#")
+                     i.fa.fa-instagram
+                  a(href="#")
+                     i.fa.fa-snapchat
+                  a(href="#")
+                     i.fa.fa-facebook
+                  a(href="#")
+                     i.fa.fa-youtube
+
 
 
